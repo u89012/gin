@@ -315,6 +315,10 @@ func (c *Context) GetInt64Ptr(key string) *int64 {
 	return nil
 }
 
+func (c *Context) GetId() *int64 {
+	return c.GetInt64Ptr("id")
+}
+
 // GetUint returns the value associated with the key as an unsigned integer.
 func (c *Context) GetUint(key string) (ui uint) {
 	if val, ok := c.Get(key); ok && val != nil {
